@@ -1,1 +1,26 @@
+## Checking for null values
+SELECT
+COUNT(State) as State_Count,
+COUNT(Gender) AS Gender_Count,
+COUNT(Year) AS Year_Count,
+COUNT(Name) AS Name_Count,
+COUNT(Births) AS Births_Count,
+FROM
+  `verdant-doodad-438918-s9.Baby_Names.Names`
 
+
+## Total Names
+SELECT
+COUNT(DISTINCT Name) AS Name_total,
+Gender AS Gender
+FROM
+  `verdant-doodad-438918-s9.Baby_Names.Names`
+GROUP BY Gender
+
+## Names by Year
+SELECT
+Year,
+SUM(Births) AS Names_Qty
+FROM
+  `verdant-doodad-438918-s9.Baby_Names.Names`
+GROUP BY Year
