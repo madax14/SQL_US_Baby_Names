@@ -27,7 +27,14 @@ GROUP BY Year
 
 ## Join tables Names and Regions
 SELECT
-*
-FROM  `verdant-doodad-438918-s9.Baby_Names.Names` JN
+State,
+Gender,
+Year,
+Name,
+Births,
+string_field_1 AS Region
+FROM
+  `verdant-doodad-438918-s9.Baby_Names.Names` JN
 LEFT JOIN`verdant-doodad-438918-s9.Baby_Names.Regions` JR
-ON JN.State = JR.string_field_0
+ON 
+JN.State = JR.string_field_0
