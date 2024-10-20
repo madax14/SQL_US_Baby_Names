@@ -24,3 +24,10 @@ SUM(Births) AS Names_Qty
 FROM
   `verdant-doodad-438918-s9.Baby_Names.Names`
 GROUP BY Year
+
+## Join tables Names and Regions
+SELECT
+*
+FROM  `verdant-doodad-438918-s9.Baby_Names.Names` JN
+LEFT JOIN`verdant-doodad-438918-s9.Baby_Names.Regions` JR
+ON JN.State = JR.string_field_0
