@@ -38,3 +38,15 @@ FROM
 LEFT JOIN`verdant-doodad-438918-s9.Baby_Names.Regions` JR
 ON 
 JN.State = JR.string_field_0
+
+## Top Names per Year
+SELECT 
+  Year,
+  ARRAY_AGG(Name ORDER BY Births DESC LIMIT 1)[OFFSET(0)] AS Most_Popular_Name,
+  MAX(Births) AS Max_Births
+FROM 
+  `verdant-doodad-438918-s9.Baby_Names.Names`
+GROUP BY 
+  Year
+ORDER BY 
+  Year;
