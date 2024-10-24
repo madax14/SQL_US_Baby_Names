@@ -1,1 +1,2 @@
-
+## To find the most popular name per State
+IF [Births] = { FIXED [State] : MAX([Births]) } THEN [Name] END
